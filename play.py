@@ -305,7 +305,7 @@ def interactive_level_shell(level_name, level_num, user_id):
     check_container = f"docker ps -a --format '{{{{.Names}}}}' | grep -w {level_name} > /dev/null 2>&1"
     container_exists = subprocess.call(check_container, shell=True)
     tag = f"warg{level_num}"
-    docker_image = f"ghcr.io/walchand-linux-users-group/wildwarrior44/wargame_finals:{tag}"
+    docker_image = f"yashkiran2004/ctf_challenge:war{tag}"
     if container_exists != 0:
         level_string = (
             f"docker run -dit --hostname {user_id} --user root --name {level_name} "
