@@ -1,11 +1,15 @@
 # 🟣 YashzCTF — Purple Hacker CLI CTF
 
+<!— add war gif banner —>
+![Wargame Pixel Art](https://www.reddit.com/r/gifs/comments/l6cns2/just_some_nice_russian_pixel_art_of_nuclear_war/)
+
 ```text
-  __   __   _   _  __  __  ____  _  _   ____ _____ 
-  \ \ / /  | \ | |/ / |  \/  |  _ \| || | / __ \_   _|
-   \ V /   |  \| ' /  | |\/| | |_) | || || |  | || |  
-    | |    | . `  <   | |  | |  _ <|__   _| |  | || |  
-    |_|    |_|\_|\_\  |_|  |_|_| \_\  |_|  \____/ |_|  
+__   __        _         _____ ___________ 
+\ \ / /       | |       /  __ \_   _|  ___|
+ \ V /__ _ ___| |__  ___| /  \/ | | | |_   
+  \ // _` / __| '_ \|_  / |     | | |  _|  
+  | | (_| \__ \ | | |/ /| \__/\ | | | |    
+  \_/\__,_|___/_| |_/___|\____/ \_/ \_|    
 
          A sleek terminal-first Capture The Flag experience
 ```
@@ -89,19 +93,6 @@ Total points: **4350**
 
 ---
 
-## ✨ Visuals — Purple Vibes
-
-<center>
-
-| Flag Animation | Wargame / Nuclear Art |
-|:--------------:|:---------------------:|
-| ![Flag Animation](https://www.reddit.com/r/PixelArt/comments/bso12e/simple_flag_animation_10_frames/) | ![Wargame Pixel Art](https://www.reddit.com/r/gifs/comments/l6cns2/just_some_nice_russian_pixel_art_of_nuclear_war/) |
-
-</center>
-
-> Tip: If Reddit blocks embedding, host GIFs on an image CDN (GitHub, Cloudinary) and replace the URLs for reliable display.
-
----
 
 ## Contributing
 - Fork the repo, create a branch, open a PR.
