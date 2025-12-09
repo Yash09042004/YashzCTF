@@ -93,13 +93,13 @@ Total points: **4350**
 
 <center>
 
-| Go (gopher & coding) | CTF / Hacker vibe | Flag Waving | Wargame / Battle |
-|:--------------------:|:-----------------:|:----------:|:----------------:|
-| ![Go GIF](https://media.giphy.com/media/3o6ZsY6Z38qI9p5P6k/giphy.gif) | ![Hacker GIF](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif) | ![Flag GIF](https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif) | ![Wargame GIF](https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif) |
+| Flag Animation | Wargame / Nuclear Art |
+|:--------------:|:---------------------:|
+| ![Flag Animation](https://www.reddit.com/r/PixelArt/comments/bso12e/simple_flag_animation_10_frames/) | ![Wargame Pixel Art](https://www.reddit.com/r/gifs/comments/l6cns2/just_some_nice_russian_pixel_art_of_nuclear_war/) |
 
 </center>
 
-> Tip: Replace any GIF URLs above with your custom assets (hosted on GitHub, Cloudinary, or another CDN) for a personalized look.
+> Tip: If Reddit blocks embedding, host GIFs on an image CDN (GitHub, Cloudinary) and replace the URLs for reliable display.
 
 ---
 
