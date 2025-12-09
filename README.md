@@ -1,9 +1,11 @@
 # 🟣 YashzCTF — Purple Hacker CLI CTF
 
 <center>
+
 ![Pixel Art](https://i.redd.it/2mqtkotrokn91.gif)
 
 <center>
+
 ```text
 __   __        _         _____ ___________ 
 \ \ / /       | |       /  __ \_   _|  ___|
