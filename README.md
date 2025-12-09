@@ -89,6 +89,20 @@ Total points: **4350**
 
 ---
 
+## ✨ Visuals — Purple Vibes
+
+<center>
+
+| Go (gopher & coding) | CTF / Hacker vibe | Flag Waving | Wargame / Battle |
+|:--------------------:|:-----------------:|:----------:|:----------------:|
+| ![Go GIF](https://media.giphy.com/media/3o6ZsY6Z38qI9p5P6k/giphy.gif) | ![Hacker GIF](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif) | ![Flag GIF](https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif) | ![Wargame GIF](https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif) |
+
+</center>
+
+> Tip: Replace any GIF URLs above with your custom assets (hosted on GitHub, Cloudinary, or another CDN) for a personalized look.
+
+---
+
 ## Contributing
 - Fork the repo, create a branch, open a PR.
 - Keep secrets out of commits. Run linters and basic tests before PR.
