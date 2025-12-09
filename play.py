@@ -287,9 +287,9 @@ def get_leaderboard():
                 rank_str = f"{medal} {idx:2d}"
                 username_str = username[:15].ljust(15)
                 score_str = str(score).ljust(8)
-                solved_str = str(solved)
+                solved_str = str(solved).rjust(13)
                 
-                print(f"{BOLD}{MAGENTA}│{RESET} {color}{rank_str}{RESET} {MAGENTA}│{RESET} {username_str} {MAGENTA}│{RESET} {score_str} {MAGENTA}│{RESET} {solved_str:13d} {MAGENTA}│{RESET}")
+                print(f"{BOLD}{MAGENTA}│{RESET} {color}{rank_str}{RESET} {MAGENTA}│{RESET} {username_str} {MAGENTA}│{RESET} {score_str} {MAGENTA}│{RESET} {solved_str} {MAGENTA}│{RESET}")
             
             print(f"{BOLD}{MAGENTA}└────────────────────────────────────────────────────┘{RESET}\n")
             return True

@@ -43,7 +43,7 @@ Requirements: Python 3.7+, Docker running, network access.
 ```bash
 git clone https://github.com/Yash09042004/YashzCTF.git
 cd YashzCTF
-python3 play.py
+sudo python3 play.py
 ```
 
 The client will guide you through initial setup (pulling challenge images) and then open an interactive play session.
