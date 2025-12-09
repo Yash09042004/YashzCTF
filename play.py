@@ -248,6 +248,57 @@ def delete_user(user_id):
         print(f"Could not connect to backend: {e}")
         return False
 
+def get_leaderboard():
+    """Fetch and display top 10 users from leaderboard."""
+    try:
+        resp = requests.get(f"{BACKEND_URL}/api/leaderboard")
+        if resp.status_code == 200:
+            users = resp.json()
+            # Take only top 10
+            top_10 = users[:10] if len(users) > 10 else users
+            
+            print(f"\n{BOLD}{MAGENTA}┌────────────────────────────────────────────────────┐{RESET}")
+            print(f"{BOLD}{MAGENTA}│{RESET}{BOLD}{YELLOW}           🏆 LEADERBOARD - TOP 10 🏆{RESET}{BOLD}{MAGENTA}            │{RESET}")
+            print(f"{BOLD}{MAGENTA}├────────────────────────────────────────────────────┤{RESET}")
+            print(f"{BOLD}{MAGENTA}│ Rank │ Username         │ Score    │ Levels Solved │{RESET}")
+            print(f"{BOLD}{MAGENTA}├────────────────────────────────────────────────────┤{RESET}")
+            
+            for idx, user in enumerate(top_10, 1):
+                username = user.get('username', 'Unknown')
+                score = user.get('score', 0)
+                solved = len(user.get('solvedLevels', []))
+                
+                # Color code for top 3
+                if idx == 1:
+                    color = YELLOW  # Gold
+                    medal = "🥇"
+                elif idx == 2:
+                    color = BLUE    # Silver
+                    medal = "🥈"
+                elif idx == 3:
+                    color = RED     # Bronze
+                    medal = "🥉"
+                else:
+                    color = RESET
+                    medal = "  "
+                
+                # Format the line
+                rank_str = f"{medal} {idx:2d}"
+                username_str = username[:15].ljust(15)
+                score_str = str(score).ljust(8)
+                solved_str = str(solved)
+                
+                print(f"{BOLD}{MAGENTA}│{RESET} {color}{rank_str}{RESET} {MAGENTA}│{RESET} {username_str} {MAGENTA}│{RESET} {score_str} {MAGENTA}│{RESET} {solved_str:13d} {MAGENTA}│{RESET}")
+            
+            print(f"{BOLD}{MAGENTA}└────────────────────────────────────────────────────┘{RESET}\n")
+            return True
+        else:
+            print(f"{RED}Error fetching leaderboard.{RESET}")
+            return False
+    except Exception as e:
+        print(f"{RED}Could not connect to backend: {e}{RESET}")
+        return False
+
 def interactive_level_shell(level_name, level_num, user_id):
     # Start docker container if not already running
     check_container = f"docker ps -a --format '{{{{.Names}}}}' | grep -w {level_name} > /dev/null 2>&1"
@@ -266,6 +317,7 @@ def interactive_level_shell(level_name, level_num, user_id):
     print_section_header(f"Welcome {user_id}, to CTF Level {level_num}")
     print(f"{GREEN}{BOLD}Submit the flag using 'submit FLAG{{...}}' below.{RESET}")
     print(f"{GREEN}{BOLD}Type 'play' to open your Docker shell. Type 'exit' to quit this level session.{RESET}")
+    print(f"{GREEN}{BOLD}Type 'leaderboard' to see the top 10 users.{RESET}")
     # print(f"{YELLOW}{BOLD}Type 'delete' to delete your CTF account and exit permanently.{RESET}")
 
     while True:
@@ -287,6 +339,8 @@ def interactive_level_shell(level_name, level_num, user_id):
         elif user_input.lower() == "play":
             attach_command = f"docker start {level_name} > /dev/null 2>&1 && docker exec -it {level_name} bash"
             os.system(attach_command)
+        elif user_input.lower() == "leaderboard":
+            get_leaderboard()
         elif user_input.lower() == "restart":
             if reset_user(user_id):
                 subprocess.call(f"docker rm -f {level_name} > /dev/null 2>&1", shell=True)
@@ -300,7 +354,7 @@ def interactive_level_shell(level_name, level_num, user_id):
             print("Exiting current level session.")
             return level_num
         else:
-            print("Unknown command. Use 'submit FLAG{{...}}', 'attach', 'restart', 'delete', or 'exit'.")
+            print("Unknown command. Use 'submit FLAG{{...}}', 'play', 'leaderboard', 'restart', 'delete', or 'exit'.")
 
 def main():
     global total_levels
