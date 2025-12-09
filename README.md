@@ -251,7 +251,7 @@ YashzCTF/
 
 | Variable | Required | Example |
 |----------|----------|---------|
-| `MONGODB_URI` | ✅ Yes | `mongodb+srv://user:pass@cluster.mongodb.net/ctf_db?retryWrites=true&w=majority` |
+| `MONGODB_URI` | ✅ Yes | <MongoURL Connection String> |
 | `PORT` | ❌ No | `10000` (default) |
 
 ## Troubleshooting
