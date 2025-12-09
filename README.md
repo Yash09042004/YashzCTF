@@ -1,6 +1,6 @@
 # 🟣 YashzCTF — Purple Hacker CLI CTF
 
-<!— add war gif banner —>
+
 ![Wargame Pixel Art](https://www.reddit.com/r/gifs/comments/l6cns2/just_some_nice_russian_pixel_art_of_nuclear_war/)
 
 ```text
