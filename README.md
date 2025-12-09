@@ -1,8 +1,9 @@
 # 🟣 YashzCTF — Purple Hacker CLI CTF
 
+<center>
+![Pixel Art](https://i.redd.it/2mqtkotrokn91.gif)
 
-![Wargame Pixel Art](https://preview.redd.it/mew5vf5yssd61.gif?width=640&crop=smart&format=png8&s=b7ac56d10e31c59162b5dd083ae875eca03b2c74)
-
+<center>
 ```text
 __   __        _         _____ ___________ 
 \ \ / /       | |       /  __ \_   _|  ___|
