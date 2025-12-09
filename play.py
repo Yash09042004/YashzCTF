@@ -248,6 +248,7 @@ def delete_user(user_id):
         print(f"Could not connect to backend: {e}")
         return False
 
+
 def get_leaderboard():
     """Fetch and display top 10 users from leaderboard."""
     try:
