@@ -1,0 +1,66 @@
+# Go binaries
+ctf-backend
+*.exe
+*.exe~
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Go test binaries
+*.test
+
+# Output of coverage for each package
+*.out
+
+# Go workspace file
+go.work
+
+# Dependency directories
+vendor/
+
+# Log files
+*.log
+server.log
+backend.log
+test-output.log
+
+# Temporary files
+*.tmp
+*.temp
+server.pid
+.DS_Store
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.env
+.env.local
+
+# OS-specific files
+Thumbs.db
+.DS_Store
+
+# Test files and reports
+test-local.sh
+TEST_REPORT.md
+
+# Python files (if keeping play.py separate)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Miscellaneous
+script.sh
+requirements.txt
+play.py
+
+# Build output
+/bin/
+/dist/
