@@ -1,7 +1,7 @@
 # 🟣 YashzCTF — Purple Hacker CLI CTF
 
 
-![Wargame Pixel Art](https://www.reddit.com/r/gifs/comments/l6cns2/just_some_nice_russian_pixel_art_of_nuclear_war/)
+![Wargame Pixel Art](https://preview.redd.it/mew5vf5yssd61.gif?width=640&crop=smart&format=png8&s=b7ac56d10e31c59162b5dd083ae875eca03b2c74)
 
 ```text
 __   __        _         _____ ___________ 
