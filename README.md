@@ -1,55 +1,37 @@
-# 🟣 YashzCTF — CLI CTF (Purple Hacker Theme)
+# 🟣 YashzCTF — Purple Hacker CLI CTF
 
+```text
+  __   __   _   _  __  __  ____  _  _   ____ _____ 
+  \ \ / /  | \ | |/ / |  \/  |  _ \| || | / __ \_   _|
+   \ V /   |  \| ' /  | |\/| | |_) | || || |  | || |  
+    | |    | . `  <   | |  | |  _ <|__   _| |  | || |  
+    |_|    |_|\_|\_\  |_|  |_|_| \_\  |_|  \____/ |_|  
+
+         A sleek terminal-first Capture The Flag experience
 ```
-   __   __            _     _   _  _____ _____ _______ 
-   \ \ / /           | |   | \ | |/ ____|_   _|__   __|
-    \ V /___  _   _  | |   |  \| | |      | |    | |   
-     \ // _ \| | | | | |   | . ` | |      | |    | |   
-     | | (_) | |_| | | |___| |\  | |____ _| |_   | |   
-     \_/\___/ \__,_| |_____|_| \_|\_____|_____|  |_|   
 
-                A fully CLI-based Capture The Flag
-```
-
-💜 Welcome to **YashzCTF** — a compact, terminal-first CTF platform built for learning and competitions. Solve challenges inside isolated Docker containers, submit flags from your terminal and climb the leaderboard.
+💜 Welcome to **YashzCTF** — a compact, terminal-native CTF platform with isolated Docker challenge environments and a lightweight Go backend.
 
 ---
 
-## ✨ Core Concept
-
-- Fully CLI driven experience — no web UI required.
-- Each challenge runs in its own Docker container for isolation and reproducibility.
-- Lightweight Go backend provides user state, flag validation and leaderboard.
-- Python CLI (`play.py`) manages setup, pulls challenge containers, and provides an interactive shell per level.
+## What this project is
+- Terminal-first CTF: play entirely in your shell — no browser required.
+- Each challenge runs in its own Docker container for safety and reproducibility.
+- Backend (Go) validates flags, tracks scores and progression; CLI client (Python) orchestrates gameplay.
 
 ---
 
-## 🔧 Features
-
-- 🧩 10 progressive challenges (intro → expert)
-- 🐳 Auto-pull & manage Docker challenge containers
-- 🚩 Submit flags from the terminal (`submit flag{...}`)
-- 🏆 Live leaderboard (top users & scores)
-- 🔒 Isolated environments per level (Docker)
-- 💾 Persistent progress stored in MongoDB
+## Key Features
+- 🐍 CLI client: interactive session, shell attach, flag submission
+- 🐳 Dockerized challenges: one container per level for isolation
+- 🏆 Live leaderboard: view top players from the terminal
+- 🔄 Persistent progress: user state stored in MongoDB
+- ⚡ Fast backend: written in Go for concurrency and performance
 
 ---
 
-## 🧭 How it works (brief)
-
-1. CLI prompts for username and saves it locally.
-2. CLI pulls Docker images for each level (one-time setup).
-3. Player selects a level and can `play` (open shell) or `submit` a flag.
-4. Backend validates flags, updates score and progression.
-5. Use `leaderboard` in-game to view the top players.
-
----
-
-## ▶️ Quick Local Run (client)
-
-Requirements: Python 3.7+, Docker (running), network access.
-
-Run the CLI client:
+## Quick local run (client-only)
+Requirements: Python 3.7+, Docker running, network access.
 
 ```bash
 git clone https://github.com/Yash09042004/YashzCTF.git
@@ -57,59 +39,65 @@ cd YashzCTF
 python3 play.py
 ```
 
-The CLI will guide you through setup (pull Docker images) and gameplay.
+The client will guide you through initial setup (pulling challenge images) and then open an interactive play session.
 
 ---
 
-## ⚙️ Tech Stack
+## In-game commands
+While in a level prompt (e.g. `ctf-1>`):
 
-- Backend: Go (single binary)
+- `submit flag{...}` — submit a flag
+- `play` — open an interactive bash shell inside the challenge container
+- `leaderboard` — show top 10 players (nice purple-styled table)
+- `restart` — reset your progress to level 1 (if enabled)
+- `delete` — delete your user account (removes local saved username)
+- `exit` — leave current level session
+
+---
+
+## Tech Stack
+- Backend: Go 1.20+ (single binary)
+- Client: Python 3 (CLI)
 - Database: MongoDB (Atlas or local)
-- Client: Python 3 CLI (`play.py`)
-- Containers: Docker images for each challenge
+- Containers: Docker for challenge isolation
 
 ---
 
-## 🧾 Challenges (summary)
-
+## Challenges (summary)
 | # | Difficulty | Points |
 |---:|:----------:|:------:|
 | 1  | ⭐ Beginner | 100 |
 | 2  | ⭐ Beginner | 150 |
-| 3  | ⭐⭐ Easy   | 200 |
-| 4  | ⭐⭐ Easy   | 250 |
+| 3  | ⭐⭐ Easy    | 200 |
+| 4  | ⭐⭐ Easy    | 250 |
 | 5  | ⭐⭐⭐ Medium | 300 |
 | 6  | ⭐⭐⭐ Medium | 350 |
-| 7  | ⭐⭐⭐⭐ Hard | 400 |
-| 8  | ⭐⭐⭐⭐ Hard | 450 |
+| 7  | ⭐⭐⭐⭐ Hard  | 400 |
+| 8  | ⭐⭐⭐⭐ Hard  | 450 |
 | 9  | ⭐⭐⭐⭐⭐ Expert | 500 |
 | 10 | ⭐⭐⭐⭐⭐ Expert | 1000 |
 
-Total: 4350 points
+Total points: **4350**
 
 ---
 
-## 🔐 Environment (important)
+## Env vars (backend)
+- `MONGODB_URI` — MongoDB connection string (required)
+- `PORT` — optional, default 10000
 
-The backend reads its MongoDB connection from an environment variable:
-
-- `MONGODB_URI` — set this to your MongoDB Atlas or local URI when running the backend locally.
-
-(Do NOT commit secrets to the repo.)
+> ⚠️ Never commit secrets to the repository. Use environment variables or secret stores.
 
 ---
 
-## 👩‍💻 Contributing
-
-- Fork, create a feature branch, and open a Pull Request.
-- Keep secrets out of commits. Use env vars for credentials.
+## Contributing
+- Fork the repo, create a branch, open a PR.
+- Keep secrets out of commits. Run linters and basic tests before PR.
 
 ---
 
-## 📝 License
-
+## License
 MIT — free for educational and non-commercial use.
 
 ---
 
-Enjoy — and hack responsibly 💜
+Happy hacking — keep it purple, keep it safe. 💜
